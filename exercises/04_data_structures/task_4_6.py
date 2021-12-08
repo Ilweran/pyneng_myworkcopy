@@ -16,5 +16,16 @@ Outbound Interface    FastEthernet0/0
 Это не значит, что задание сделано правильно, просто на данном этапе сложно иначе
 проверять результат.
 """
-
 ospf_route = "      10.0.24.0/24 [110/41] via 10.0.13.3, 3d18h, FastEthernet0/0"
+ospf_route_list = ospf_route.split()
+prefix  = ospf_route_list[0]
+ad      = ospf_route_list[1]
+nh      = ospf_route_list[3][:-1]
+age     = ospf_route_list[4][:-1]
+intf    = ospf_route_list[5]
+print(f'''
+{"Prefix":<20}{prefix:<20}
+{"AD/Metric":<20}{ad:<20}
+{"Next-Hop":<20}{nh:<20}
+{"Last Update":<20}{age:<20}
+{"Outbound Interface":<20}{intf:<20}''')

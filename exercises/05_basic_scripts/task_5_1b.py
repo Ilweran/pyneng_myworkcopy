@@ -52,6 +52,6 @@ london_co = {
 }
 
 dev     = input('Input device name: ')
-param   = input('Input device parameter('london_co'): ')
-
+secdictkeys = ", ".join(london_co[dev].keys())
+param   = input('Input device parameter ' + '(' + secdictkeys + '): ')
 print(london_co[dev][param])

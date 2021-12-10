@@ -30,3 +30,31 @@ Out[1]: '11111111111111111111111111110000'
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
+prefix_mask = input('Input network in the format \"prefix/len\": ')
+prefix  = prefix_mask.split("/")[0]
+mask    = int(prefix_mask.split("/")[1])
+
+p_oct1, p_oct2, p_oct3, p_oct4 = prefix.split(".")
+
+mask_str = "1" * mask + "0" * (32 - mask)
+
+m_oct1  = mask_str[0:8]
+m_oct2  = mask_str[8:16]
+m_oct3  = mask_str[16:24]
+m_oct4  = mask_str[24:]
+
+
+m_oct1_d = int(m_oct1, base=2)
+m_oct2_d = int(m_oct2, base=2)
+m_oct3_d = int(m_oct3, base=2)
+m_oct4_d = int(m_oct4, base=2)
+
+print(f'''
+    Network:
+    {int(p_oct1):<10}{int(p_oct2):<10}{int(p_oct3):<10}{int(p_oct4):<10}
+    {int(p_oct1):08b}  {int(p_oct2):08b}  {int(p_oct3):08b}  {int(p_oct4):08b}
+    
+    Mask:
+    {m_oct1_d:<10}{m_oct2_d:<10}{m_oct3_d:<10}{m_oct4_d:<10}
+    {m_oct1_d:08b}  {m_oct2_d:08b}  {m_oct3_d:08b}  {m_oct4_d:08b}
+    ''')

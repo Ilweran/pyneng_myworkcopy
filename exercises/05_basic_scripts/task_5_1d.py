@@ -43,3 +43,11 @@ london_co = {
         "routing": True,
     },
 }
+
+dev     = input('Input device name: ')
+param_dict = london_co[dev]
+secdictkeys = ", ".join(london_co[dev].keys())
+param   = input('Input device parameter ' + '(' + secdictkeys + '): ')
+param_lowercase = param.lower()
+print(param_dict.get(param_lowercase, "No such parameter"))
+

@@ -49,6 +49,7 @@ switchport trunk encapsulation dot1q
 switchport mode trunk
 switchport trunk allowed vlan 2,3,4,5
 """
+#vlans = ''
 
 access_template = [
     "switchport mode access",
@@ -63,3 +64,17 @@ trunk_template = [
     "switchport mode trunk",
     "switchport trunk allowed vlan {}",
 ]
+
+mode    = input("Input interface mode: ")
+intf    = input("Input interface type/number: ")
+vlans   = input("Input vlan(s): ")
+
+print("\n")
+
+switchport_mode_template = {
+    "access":   access_template, 
+    "trunk":    trunk_template,
+}
+
+print("interface ", intf)
+print("\n".join(switchport_mode_template[mode]).format(vlans))

@@ -93,6 +93,7 @@ print(f'''
     {fin_ip_oct1:<10}{fin_ip_oct2:<10}{fin_ip_oct3:<10}{fin_ip_oct4:<10}
 
     Mask:
+    /{mask_num}
     {m_oct1_d:<10}{m_oct2_d:<10}{m_oct3_d:<10}{m_oct4_d:<10}
     {m_oct1_d:08b}  {m_oct2_d:08b}  {m_oct3_d:08b}  {m_oct4_d:08b}
     ''')

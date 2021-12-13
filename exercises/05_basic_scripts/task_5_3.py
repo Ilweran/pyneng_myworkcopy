@@ -49,7 +49,6 @@ switchport trunk encapsulation dot1q
 switchport mode trunk
 switchport trunk allowed vlan 2,3,4,5
 """
-#vlans = ''
 
 access_template = [
     "switchport mode access",
